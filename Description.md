@@ -1,6 +1,6 @@
 Automatic Number Plate Recognition (ANPR) Using Python and YOLOv8
 
-#Overview
+Overview
 The Automatic Number Plate Recognition (ANPR) system is a computer vision project that detects and recognizes vehicle license plates using the YOLOv8 object detection model and EasyOCR for text recognition. This project can be used in traffic monitoring, toll systems, and parking management systems.
 
 This document serves as a guide to create the repository for your project, including a detailed description, file structure, and usage instructions.
