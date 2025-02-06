@@ -51,7 +51,6 @@ A labeled dataset of vehicle images with annotated license plates for YOLOv8 tra
 ```plaintext
 automatic-number-plate-recognition-python-yolov8/
 ├── README.md
-├── LICENSE
 ├── requirements.txt
 ├── main.py
 ├── util.py
