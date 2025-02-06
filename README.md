@@ -115,8 +115,6 @@ Create your feature branch (git checkout -b feature-xyz).
 Commit your changes (git commit -m 'Add new feature').
 Push to the branch (git push origin feature-xyz).
 Open a pull request.
-## 📄 License
-This project is licensed under the MIT License.
 
 ## 🙌 Acknowledgements
 YOLOv8 - Ultralytics
