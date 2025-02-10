@@ -1,10 +1,14 @@
 #import library
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+import string
+import easyocr
 
 # Initialize the OCR reader
-
+reader = easyocr.Reader(['en'], gpu=False)
 
 # Mapping dictionaries for character conversion
-# Some characters in license plates might be misinterpreted as numbers or vice versa
+
 
 #create Function
  # Save results to a CSV file
