@@ -57,11 +57,8 @@ automatic-number-plate-recognition-python-yolov8/
 ├── visualize.py
 ├── add_missing_data.py
 ├── models/
-│   └── yolov8_trained_model.pt
-└── data/
-    ├── video.mp4
-    └── images/
-        └── example_image.jpg
+   └── yolov8_trained_model.pt
+
 ```
 
 ## 🚀 Installation
