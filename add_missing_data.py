@@ -7,6 +7,9 @@ def interpolate_bounding_boxes(data):
   car_ids = np.array([int(float(row['car_id'])) for row in data])
   car_bboxes = np.array([list(map(float, row['car_bbox'][1:-1].split())) for row in data])
   license_plate_bboxes = np.array([list(map(float, row['license_plate_bbox'][1:-1].split())) for row in data])
+
+  interpolated_data = []
+  
   return interpolated_data
 
 # Load the CSV file
