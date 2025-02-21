@@ -14,6 +14,9 @@ def interpolate_bounding_boxes(data):
 
         frame_numbers_ = [p['frame_nmr'] for p in data if int(float(p['car_id'])) == int(float(car_id))]
         print(frame_numbers_, car_id)
+
+
+
   return interpolated_data
 
 # Load the CSV file
