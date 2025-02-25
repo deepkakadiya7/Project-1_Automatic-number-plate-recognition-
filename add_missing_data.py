@@ -49,7 +49,13 @@ def interpolate_bounding_boxes(data):
 
             car_bboxes_interpolated.append(car_bbox)
             license_plate_bboxes_interpolated.append(license_plate_bbox)
-
+          
+        for i in range(len(car_bboxes_interpolated)):
+              frame_number = first_frame_number + i
+              row = {}
+              row['frame_nmr'] = str(frame_number)
+              row['car_id'] = str(car_id)
+              row['car_bbox'] = ' '.join(map(str, car_bboxes_interpolated[i])) 
 
 
   return interpolated_data
