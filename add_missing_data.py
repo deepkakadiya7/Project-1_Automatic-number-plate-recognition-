@@ -24,6 +24,34 @@ def interpolate_bounding_boxes(data):
         first_frame_number = car_frame_numbers[0]
         last_frame_number = car_frame_numbers[-1]  
 
+        for i in range(len(car_bboxes[car_mask])):
+            frame_number = car_frame_numbers[i]
+            car_bbox = car_bboxes[car_mask][i]
+            license_plate_bbox = license_plate_bboxes[car_mask][i]
+
+            if i > 0:
+                prev_frame_number = car_frame_numbers[i-1]
+                prev_car_bbox = car_bboxes_interpolated[-1]
+                prev_license_plate_bbox = license_plate_bboxes_interpolated[-1]
+
+                if frame_number - prev_frame_number > 1:
+                    # Interpolate missing frames' bounding boxes
+                    frames_gap = frame_number - prev_frame_number
+                    x = np.array([prev_frame_number, frame_number])
+                    x_new = np.linspace(prev_frame_number, frame_number, num=frames_gap, endpoint=False)
+                    interp_func = interp1d(x, np.vstack((prev_car_bbox, car_bbox)), axis=0, kind='linear')
+                    interpolated_car_bboxes = interp_func(x_new)
+                    interp_func = interp1d(x, np.vstack((prev_license_plate_bbox, license_plate_bbox)), axis=0, kind='linear')
+                    interpolated_license_plate_bboxes = interp_func(x_new)
+
+                    car_bboxes_interpolated.extend(interpolated_car_bboxes[1:])
+                    license_plate_bboxes_interpolated.extend(interpolated_license_plate_bboxes[1:])
+
+            car_bboxes_interpolated.append(car_bbox)
+            license_plate_bboxes_interpolated.append(license_plate_bbox)
+
+
+
   return interpolated_data
 
 # Load the CSV file
